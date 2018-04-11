@@ -22,8 +22,12 @@ wget https://releases.hashicorp.com/nomad/0.7.1/nomad_0.7.1_darwin_amd64.zip
 unzip consul_1.0.5_darwin_amd64.zip
 unzip nomad_0.7.1_darwin_amd64.zip
 
+mkdir -p ~/.local/bin/
 mv consul ~/.local/bin/
 mv nomad ~/.local/bin/
+
+# and be sure to have this line in your bashrc or zshrc file :
+export PATH=~/.local/bin:$PATH
 ```
 
 ## Build and run your container
