@@ -10,13 +10,20 @@ You should have installed Docker and NodeJS.
 ```
 # go to your download folder, then..
 
+# (for Linux users)
 wget https://releases.hashicorp.com/consul/1.0.5/consul_1.0.5_linux_amd64.zip
-unzip consul_1.0.5_linux_amd64.zip
-mv consul ~/.local/bin/
-
 wget https://releases.hashicorp.com/nomad/0.7.1/nomad_0.7.1_linux_amd64-lxc.zip
+unzip consul_1.0.5_linux_amd64.zip
 unzip nomad_0.7.1_linux_amd64-lxc.zip
-mv nomad /usr/local/bin
+
+# (for Mac users)
+wget https://releases.hashicorp.com/consul/1.0.5/consul_1.0.5_darwin_amd64.zip
+wget https://releases.hashicorp.com/nomad/0.7.1/nomad_0.7.1_darwin_amd64.zip
+unzip consul_1.0.5_darwin_amd64.zip
+unzip nomad_0.7.1_darwin_amd64.zip
+
+mv consul ~/.local/bin/
+mv nomad ~/.local/bin/
 ```
 
 ## Build and run your container
@@ -60,6 +67,6 @@ nomad status
 # Handle a job
 nomad status <job_name>
 nomad logs -f <alloc_id>
-nomad logs -f stderr <alloc_id> # to see the error logs
+nomad logs -f -stderr <alloc_id> # to see the error logs
 nomad stop <job_name>
 ```
