@@ -11,6 +11,10 @@ job "hello-nomad" {
       driver = "docker"
       config {
         image = "jdxlabs/hello-nomad"
+
+        port_map {
+          http = 8080
+        }
       }
       
       service {
@@ -24,7 +28,7 @@ job "hello-nomad" {
         network {
           mbits = 10
           port "http" {
-            static = 8080
+            #static = 8080
           }
         }
       }
