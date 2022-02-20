@@ -1,7 +1,7 @@
 # The full documentation is available here : https://www.nomadproject.io/docs/job-specification/index.html
 
 job "hello-nomad" {
-  datacenters = ["lisa"]
+  datacenters = ["dc1"]
   type = "service"
 
   group "services" {
@@ -10,7 +10,7 @@ job "hello-nomad" {
     task "frontend" {
       driver = "docker"
       config {
-        image = "jdxlabs/hello-nomad"
+        image = "waynedelta/hello-nomad"
 
         port_map {
           http = 8080
